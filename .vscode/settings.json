@@ -4,6 +4,13 @@
     "package",
     "model",
     "schema",
-    "migration"
+    "migration",
+    "error",
+    "interfaces",
+    "utils",
+    "service",
+    "controller",
+    "routes",
+    "api"
   ]
 }
