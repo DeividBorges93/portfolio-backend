@@ -1,5 +1,9 @@
 {
   "conventionalCommits.scopes": [
-    "config"
+    "config",
+    "package",
+    "model",
+    "schema",
+    "migration"
   ]
 }
