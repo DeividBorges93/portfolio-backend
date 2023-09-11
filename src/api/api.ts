@@ -4,6 +4,10 @@ import express from 'express';
 import messageRoutes from "../routes/message.routes";
 import errorMiddleware from "./middleware/error.middleware";
 
+global.performance = global.performance || {
+  now: () => new Date().getTime(),
+};
+
 export class Api {
   public api: express.Express;
 
