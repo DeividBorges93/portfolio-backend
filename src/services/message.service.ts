@@ -5,6 +5,12 @@ import validateMessageFields from '../utils/validateMessageFields';
 import { Message } from '../schemas/message-schemas';
 
 export default class MessageService {
+  readonly getMessages = async (): Promise<IMessage[]> => {
+    const messages = await prisma.message.findMany();
+
+    return messages;
+  }
+
   public saveMessage = async (message: Message): Promise<IMessage | IError> => {
     validateMessageFields(message);
     
