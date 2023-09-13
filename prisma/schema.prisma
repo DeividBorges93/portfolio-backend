@@ -10,6 +10,6 @@ generator client {
 model Message {
   id      Int    @id @default(autoincrement())
   name    String @db.VarChar(25)
-  email   String @unique
+  email   String
   message String @db.VarChar(500)
 }
