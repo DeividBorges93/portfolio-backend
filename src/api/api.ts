@@ -16,7 +16,10 @@ export class Api {
 
   private config():void {
     this.api.use(express.json());
-    this.api.use(cors());
+    this.api.use(cors({
+      methods: ['GET', 'POST'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    }));
   }
 
   private routes():void {
