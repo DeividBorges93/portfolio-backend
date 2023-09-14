@@ -15,11 +15,19 @@ export class Api {
   }
 
   private config():void {
+    const accessControl: express.RequestHandler = (_req, res, next) => {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header(
+        "Access-Control-Allow-Methods",
+        "GET,POST,DELETE,OPTIONS,PUT,PATCH"
+      );
+      res.header("Access-Control-Allow-Headers", "*");
+      next();
+    };
+
     this.api.use(express.json());
-    this.api.use(cors({
-      methods: ['GET', 'POST'],
-      allowedHeaders: ['Content-Type', 'Authorization'],
-    }));
+    this.api.use(cors());
+    this.api.use(accessControl);
   }
 
   private routes():void {
